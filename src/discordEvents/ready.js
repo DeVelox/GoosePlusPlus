@@ -64,12 +64,12 @@ module.exports = {
         for (let guildArray of client.guilds.cache) {
             const guild = guildArray[1];
 
-            try {
-                await guild.members.me.setNickname(Config.discord.username);
-            }
-            catch (e) {
-                client.log(client.intlGet(null, 'warningCap'), client.intlGet(null, 'ignoreSetNickname'));
-            }
+            // try {
+            //     await guild.members.me.setNickname(Config.discord.username);
+            // }
+            // catch (e) {
+            //     client.log(client.intlGet(null, 'warningCap'), client.intlGet(null, 'ignoreSetNickname'));
+            // }
             await client.syncCredentialsWithUsers(guild);
             await client.setupGuild(guild);
         }
