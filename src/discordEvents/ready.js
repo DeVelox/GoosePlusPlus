@@ -39,19 +39,20 @@ module.exports = {
             name: client.user.tag
         }));
 
-        try {
-            await client.user.setUsername(Config.discord.username);
-        }
-        catch (e) {
-            client.log(client.intlGet(null, 'warningCap'), client.intlGet(null, 'ignoreSetUsername'));
-        }
-
-        try {
-            await client.user.setAvatar(Path.join(__dirname, '..', 'resources/images/rustplusplus_logo.png'));
-        }
-        catch (e) {
-            client.log(client.intlGet(null, 'warningCap'), client.intlGet(null, 'ignoreSetAvatar'));
-        }
+        // Disable so the bot picks up the settings from the application
+        // try {
+        //     await client.user.setUsername(Config.discord.username);
+        // }
+        // catch (e) {
+        //     client.log(client.intlGet(null, 'warningCap'), client.intlGet(null, 'ignoreSetUsername'));
+        // }
+        //
+        // try {
+        //     await client.user.setAvatar(Path.join(__dirname, '..', 'resources/images/rustplusplus_logo.png'));
+        // }
+        // catch (e) {
+        //     client.log(client.intlGet(null, 'warningCap'), client.intlGet(null, 'ignoreSetAvatar'));
+        // }
 
         client.user.setPresence({
             activities: [{ name: '/help', type: Discord.ActivityType.Listening }],
